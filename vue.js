@@ -1,26 +1,18 @@
 module.exports = {
-  env: {
-    es2021: true,
-    node: true,
-  },
   extends: [
-    'standard',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:vuejs-accessibility/recommended',
     'plugin:prettier/recommended',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint', 'vue'],
+  plugins: ['@typescript-eslint', 'vue', 'import'],
   rules: {
     'prettier/prettier': [
       'error',
       {
-        plugins: ['prettier-plugin-tailwindcss', 'prettier-plugin-organize-imports'],
+        plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
         printWidth: 100,
         tabWidth: 2,
         singleQuote: true,
@@ -35,64 +27,25 @@ module.exports = {
         singleAttributePerLine: true,
       },
     ],
-    'vue/no-unused-components': 'error',
-    'vue/no-unused-vars': 'error',
-    'vue/no-multiple-template-root': 'off',
-    'vue/html-indent': [
-      'error',
-      2,
-      {
-        attribute: 1,
-        baseIndent: 1,
-        closeBracket: 0,
-        alignAttributesVertically: true,
-        ignores: [],
-      },
-    ],
-    'vue/max-attributes-per-line': [
+    'import/order': [
       'error',
       {
-        singleline: 1,
-        multiline: 1,
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
       },
     ],
-    'vuejs-accessibility/alt-text': 'error',
-    'vuejs-accessibility/anchor-has-content': 'error',
-    'vuejs-accessibility/form-control-has-label': 'error',
-    'vue/attributes-order': [
-      'error',
-      {
-        order: [
-          'DEFINITION',
-          'LIST_RENDERING',
-          'CONDITIONALS',
-          'RENDER_MODIFIERS',
-          'GLOBAL',
-          ['UNIQUE', 'SLOT'],
-          'TWO_WAY_BINDING',
-          'OTHER_DIRECTIVES',
-          'OTHER_ATTR',
-          'EVENTS',
-          'CONTENT',
-        ],
-        alphabetical: false,
-      },
-    ],
-    'vue/singleline-html-element-content-newline': [
-      'error',
-      {
-        ignoreWhenNoAttributes: true,
-        ignoreWhenEmpty: true,
-        ignores: ['pre', 'textarea'],
-      },
-    ],
-    'vue/multiline-html-element-content-newline': [
-      'error',
-      {
-        ignoreWhenEmpty: true,
-        ignores: ['pre', 'textarea'],
-        allowEmptyLines: false,
-      },
-    ],
+    'import/newline-after-import': 'error',
+  },
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+  },
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  settings: {
+    vue: {
+      version: '3',
+    },
   },
 }
