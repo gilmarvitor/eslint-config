@@ -4,10 +4,8 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'plugin:prettier/recommended',
     'prettier',
-    'plugin:import/errors',
-    'plugin:import/warnings',
   ],
-  plugins: ['@typescript-eslint', 'vue', 'import'],
+  plugins: ['@typescript-eslint', 'vue'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -27,13 +25,6 @@ module.exports = {
         singleAttributePerLine: true,
       },
     ],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      },
-    ],
-    'import/newline-after-import': 'error',
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
