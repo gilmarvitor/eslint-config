@@ -8,12 +8,12 @@ Para usar esta configuração em seu projeto, adicione o seguinte ao seu arquivo
 
 ```json
 {
-    "extends": ["eslint-config-infolive"]
+    "extends": ["@infolive/eslint-config/vue"]
 }
 ```
 
 Em seguida, instale a configuração como uma dependência de desenvolvimento:
 
 ```
-npm install --save-dev eslint-config-infolive
+npm install --save-dev eslint eslint-config-infolive
 ```

@@ -1,0 +1,15 @@
+{
+  "plugins": [],
+  "printWidth": 80,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "semi": false,
+  "endOfLine": "auto",
+  "bracketSpacing": true,
+  "vueIndentScriptAndStyle": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": true
+}

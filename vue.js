@@ -1,42 +1,30 @@
 module.exports = {
   extends: [
-    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:prettier/recommended',
-    'prettier',
+    'standard',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
   ],
   plugins: ['@typescript-eslint', 'vue'],
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
-        printWidth: 100,
-        tabWidth: 2,
-        singleQuote: true,
-        trailingComma: 'all',
-        arrowParens: 'always',
-        semi: false,
-        endOfLine: 'auto',
-        bracketSpacing: true,
-        vueIndentScriptAndStyle: true,
-        htmlWhitespaceSensitivity: 'ignore',
-        embeddedLanguageFormatting: 'auto',
-        singleAttributePerLine: true,
-      },
-    ],
-  },
+  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
+  rules: {},
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     node: true,
   },
   settings: {
     vue: {
       version: '3',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      'vue-eslint-parser': ['.vue']
     },
   },
 }
